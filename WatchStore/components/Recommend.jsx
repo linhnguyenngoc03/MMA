@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, ScrollView, Text, StyleSheet, Image } from 'react-native'
-export default function ProfileScroll() {
+export default function Recommend() {
     //ScrollView is to make your specific elements scrollable. 
     //Becareful when using this to make a large amount of content scrollable, 
     //there are better ways to impliment that. 

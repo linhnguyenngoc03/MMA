@@ -1,6 +1,6 @@
 import React from 'react'
 import { View, Text, FlatList, Image, StyleSheet } from 'react-native'
-export default function EnemiesProfile() {
+export default function WatchList() {
     // A FlatList function similar to that of the ScrollView, though with better performance
     // By only render the elements only appear on the screen, the load time can sinificantly increase
     // By using FlatList, you have asscess to renderItem() prop. Function similar to object.map()
@@ -14,6 +14,7 @@ export default function EnemiesProfile() {
     return (
         <View 
             style={{
+                marginBottom:"5%"
             }}
         >
             <View>
