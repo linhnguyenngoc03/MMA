@@ -3,6 +3,7 @@ import { View, Text, StyleSheet, Image, FlatList } from 'react-native'
 import { Surface } from 'react-native-paper'
 import { StarRatingDisplay } from 'react-native-star-rating-widget'
 import { watchdata } from './FetchData'
+import Separator from './Customized/Separator'
 export default function WatchList() {
     // A FlatList function similar to that of the ScrollView, though with better performance
     // By only render the elements only appear on the screen, the load time can sinificantly increase
@@ -57,10 +58,12 @@ export default function WatchList() {
                                     style={customizedStyles.image}
                                     source={{ uri: item.image }}
                                 />
-                                <View style={{ display: 'flex', flexDirection: 'column', justifyContent: "center" }}>
-                                    <Text style={{textAlign:'center'}}>{item.watchName}</Text>
-                                    <StarRatingDisplay starSize={20} rating={item.averageRating} maxStars={5} />
+                                  <View style={{ display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center' }}>
+                                    <Text style={{ textAlign: 'center' }}>{item.watchName}</Text>
+                                    <StarRatingDisplay color='red' starSize={20} rating={item.averageRating} maxStars={5} />
+                                    <Separator />
                                 </View>
+                                <Text style={{color:"green"}}>Price: {item.price}$</Text>
                             </Surface>
                         </View>
                 }

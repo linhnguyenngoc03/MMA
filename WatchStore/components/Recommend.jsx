@@ -3,6 +3,7 @@ import { View, ScrollView, Text, StyleSheet, Image, FlatList } from 'react-nativ
 import { Surface } from 'react-native-paper'
 import { StarRatingDisplay } from 'react-native-star-rating-widget'
 import { watchdata } from './FetchData'
+import Separator from './Customized/Separator'
 export default function Recommend() {
     //ScrollView is to make your specific elements scrollable. 
     //Becareful when using this to make a large amount of content scrollable, 
@@ -22,7 +23,7 @@ export default function Recommend() {
                 return { ...watch, averageRating };
             });
             //kys
-            setWatchlist(updatedWatchList.filter(watch => watch.averageRating>=2))
+            setWatchlist(updatedWatchList.filter(watch => watch.averageRating >= 2))
         }
         getWatchList()
     }, [])
@@ -49,6 +50,7 @@ export default function Recommend() {
                         <View style={{
                             borderRadius: 10,
                             marginBottom: 10,
+                            marginTop: 10,
                         }}>
                             <Surface
                                 elevation={2}
@@ -58,10 +60,12 @@ export default function Recommend() {
                                     style={customizedStyles.image}
                                     source={{ uri: item.image }}
                                 />
-                                <View style={{ display: 'flex', flexDirection: 'column', justifyContent: "center" }}>
-                                    <Text style={{textAlign:'center'}}>{item.watchName}</Text>
-                                    <StarRatingDisplay starSize={20} rating={item.averageRating} maxStars={5} />
+                                <View style={{ display: 'flex', flexDirection: 'column', justifyContent: "center", alignItems: 'center' }}>
+                                    <Text style={{ textAlign: 'center' }}>{item.watchName}</Text>
+                                    <StarRatingDisplay color='red' starSize={20} rating={item.averageRating} maxStars={5} />
+                                    <Separator />
                                 </View>
+                                <Text style={{color:"green"}}>Price: {item.price}$</Text>
                             </Surface>
                         </View>
                 }
@@ -86,8 +90,8 @@ const customizedStyles = StyleSheet.create({
         display: "flex",
         flexDirection: 'column',
         justifyContent: "flex-start",
-        maxWidth:210,
-        minHeight:280
+        maxWidth: 210,
+        minHeight: 280
     }
     ,
     image: {
