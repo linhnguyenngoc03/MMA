@@ -12,14 +12,14 @@ import Navigator from './components/Navigator';
 
 
 export default function App() {
- //Note: SafeAreaView is specifically for IOS devices, for the UI can get covered by the devices desgin
+  //Note: SafeAreaView is specifically for IOS devices, for the UI can get covered by the devices desgin
   return (
+
     <SafeAreaProvider style={styles.container}>
-     
         <Navigator />
-        <Header/>
-     
+
     </SafeAreaProvider>
+
   );
 }
 const styles = StyleSheet.create({
