@@ -5,13 +5,7 @@ export default function Recommend() {
     //Becareful when using this to make a large amount of content scrollable, 
     //there are better ways to impliment that. 
     //This is for only small quantity to maintain performance
-    const imageList = [
-        "../assets/scrollview/lunacrops.png",
-        "../assets/scrollview/lunarabbits.jpg",
-        "../assets/scrollview/watastuki2.jpg",
-        "../assets/scrollview/watatsuki.jpeg",
-        "../assets/scrollview/watatsuki3.jpeg"
-    ]
+  
     return (
         <View 
             style={{
@@ -23,7 +17,7 @@ export default function Recommend() {
                 <Text
                     style={customizedStyles.textHeader}
                 >
-                    Here is what we look like!</Text>
+                    We Reccommend These Just For You</Text>
             </View>
             <ScrollView horizontal={true}>
                 <View style={customizedStyles.imageFrame}>
